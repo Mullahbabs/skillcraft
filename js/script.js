@@ -1,204 +1,255 @@
 // Carousel functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize carousel
-    initCarousel();
-    
-    // Initialize mobile menu
-    initMobileMenu();
-    
-    // Initialize smooth scrolling for navigation links
-    initSmoothScrolling();
-    
-    // Initialize course card animations
-    initCourseAnimations();
-    
-    // Initialize mobile menu tray
-    initMobileMenuTray();
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize carousel
+  initCarousel();
+
+  // Initialize mobile menu
+  initMobileMenu();
+
+  // Initialize smooth scrolling for navigation links
+  initSmoothScrolling();
+
+  // Initialize course card animations
+  initCourseAnimations();
+
+  // Initialize mobile menu tray
+  initMobileMenuTray();
+
+  // Initialize statistics counter
+  initStatisticsCounter();
 });
 
 // Carousel functionality
 function initCarousel() {
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentSlide = 0;
-    let slideInterval;
+  const slides = document.querySelectorAll(".slide");
+  const indicators = document.querySelectorAll(".indicator");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentSlide = 0;
+  let slideInterval;
 
-    // Function to show a specific slide
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        // Ensure index is within bounds
-        if (index >= slides.length) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = slides.length - 1;
-        } else {
-            currentSlide = index;
-        }
-        
-        // Show the current slide
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
+  // Function to show a specific slide
+  function showSlide(index) {
+    // Hide all slides
+    slides.forEach((slide) => slide.classList.remove("active"));
+    indicators.forEach((indicator) => indicator.classList.remove("active"));
+
+    // Ensure index is within bounds
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide = index;
     }
 
-    // Function to go to next slide
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+    // Show the current slide
+    slides[currentSlide].classList.add("active");
+    indicators[currentSlide].classList.add("active");
+  }
 
-    // Function to go to previous slide
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+  // Function to go to next slide
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
 
-    // Start auto sliding
-    function startSlideShow() {
-        slideInterval = setInterval(nextSlide, 5000);
-    }
+  // Function to go to previous slide
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
 
-    // Stop auto sliding
-    function stopSlideShow() {
-        clearInterval(slideInterval);
-    }
+  // Start auto sliding
+  function startSlideShow() {
+    slideInterval = setInterval(nextSlide, 5000);
+  }
 
-    // Event listeners for controls
-    nextBtn.addEventListener('click', () => {
-        stopSlideShow();
-        nextSlide();
-        startSlideShow();
-    });
+  // Stop auto sliding
+  function stopSlideShow() {
+    clearInterval(slideInterval);
+  }
 
-    prevBtn.addEventListener('click', () => {
-        stopSlideShow();
-        prevSlide();
-        startSlideShow();
-    });
-
-    // Event listeners for indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            stopSlideShow();
-            showSlide(index);
-            startSlideShow();
-        });
-    });
-
-    // Pause slideshow when hovering over carousel
-    const carousel = document.querySelector('.carousel');
-    carousel.addEventListener('mouseenter', stopSlideShow);
-    carousel.addEventListener('mouseleave', startSlideShow);
-
-    // Start the slideshow
+  // Event listeners for controls
+  nextBtn.addEventListener("click", () => {
+    stopSlideShow();
+    nextSlide();
     startSlideShow();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    stopSlideShow();
+    prevSlide();
+    startSlideShow();
+  });
+
+  // Event listeners for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      stopSlideShow();
+      showSlide(index);
+      startSlideShow();
+    });
+  });
+
+  // Pause slideshow when hovering over carousel
+  const carousel = document.querySelector(".carousel");
+  carousel.addEventListener("mouseenter", stopSlideShow);
+  carousel.addEventListener("mouseleave", startSlideShow);
+
+  // Start the slideshow
+  startSlideShow();
 }
 
 // Mobile menu functionality
 function initMobileMenu() {
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navigation = document.querySelector('.navigation');
-    
-    menuBtn.addEventListener('click', function() {
-        navigation.style.display = navigation.style.display === 'flex' ? 'none' : 'flex';
-    });
-    
-    // Adjust for window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            navigation.style.display = 'flex';
-        } else {
-            navigation.style.display = 'none';
-        }
-    });
+  const menuBtn = document.querySelector(".mobile-menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", function () {
+    navigation.style.display =
+      navigation.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adjust for window resize
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      navigation.style.display = "flex";
+    } else {
+      navigation.style.display = "none";
+    }
+  });
 }
 
 // Smooth scrolling for navigation links
 function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.navigation a, .mobile-menu-tray a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Only prevent default for anchor links
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active state for mobile menu tray
-                    if (this.parentElement.parentElement.classList.contains('mobile-menu-tray')) {
-                        document.querySelectorAll('.mobile-menu-tray a').forEach(a => {
-                            a.classList.remove('active');
-                        });
-                        this.classList.add('active');
-                    }
-                }
-            }
-        });
+  const navLinks = document.querySelectorAll(
+    ".navigation a, .mobile-menu-tray a"
+  );
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      // Only prevent default for anchor links
+      if (this.getAttribute("href").startsWith("#")) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerHeight = document.querySelector(".header").offsetHeight;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+
+          // Update active state for mobile menu tray
+          if (
+            this.parentElement.parentElement.classList.contains(
+              "mobile-menu-tray"
+            )
+          ) {
+            document.querySelectorAll(".mobile-menu-tray a").forEach((a) => {
+              a.classList.remove("active");
+            });
+            this.classList.add("active");
+          }
+        }
+      }
     });
+  });
 }
 
 // Course card animations
 function initCourseAnimations() {
-    const courseCards = document.querySelectorAll('.course-card');
-    
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    courseCards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(card);
+  const courseCards = document.querySelectorAll(".course-card");
+
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
+      }
     });
+  }, observerOptions);
+
+  courseCards.forEach((card) => {
+    card.style.opacity = 0;
+    card.style.transform = "translateY(20px)";
+    card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(card);
+  });
 }
 
 // Mobile menu tray functionality
 function initMobileMenuTray() {
-    const trayLinks = document.querySelectorAll('.mobile-menu-tray a');
-    
-    trayLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Update active state
-            trayLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
+  const trayLinks = document.querySelectorAll(".mobile-menu-tray a");
+
+  trayLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // Update active state
+      trayLinks.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
     });
+  });
 }
 
 // Add header background on scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 50) {
+    header.style.background = "rgba(255, 255, 255, 0.98)";
+    header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+  } else {
+    header.style.background = "rgba(255, 255, 255, 0.95)";
+    header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+  }
 });
+
+// Animated statistics counter
+function initStatisticsCounter() {
+  const statItems = document.querySelectorAll(".stat-item");
+
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const statNumber = entry.target.querySelector(".stat-number");
+        const target = parseInt(statNumber.getAttribute("data-count"));
+        const suffix = statNumber.textContent.includes("%") ? "%" : "";
+
+        animateValue(statNumber, 0, target, 2000, suffix);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  statItems.forEach((item) => {
+    observer.observe(item);
+  });
+
+  function animateValue(element, start, end, duration, suffix = "") {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const value = Math.floor(progress * (end - start) + start);
+      element.textContent = value + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+}
