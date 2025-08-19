@@ -488,6 +488,14 @@ body {
   .carousel-controls {
     padding: 0 20px;
   }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-actions {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 576px) {
@@ -497,6 +505,10 @@ body {
 
   .slide-content p {
     font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 
   .features h2 {
