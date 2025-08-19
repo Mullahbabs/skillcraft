@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize smooth scrolling for navigation links
   initSmoothScrolling();
+
+  // Initialize course card animations
+  initCourseAnimations();
 });
 
 // Carousel functionality
@@ -133,6 +136,33 @@ function initSmoothScrolling() {
       }
     });
   });
+
+  // Course card animations
+  function initCourseAnimations() {
+    const courseCards = document.querySelectorAll(".course-card");
+
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    courseCards.forEach((card) => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(20px)";
+      card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      observer.observe(card);
+    });
+  }
 }
 
 // Add header background on scroll
