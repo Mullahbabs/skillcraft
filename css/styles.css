@@ -397,7 +397,7 @@ body {
 /* Features Section */
 .features {
   padding: 100px 0;
-  background: white;
+  background: var(--light);
 }
 
 .features h2 {
@@ -418,7 +418,7 @@ body {
   padding: 40px 30px;
   border-radius: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background: var(--light);
+  background: white;
 }
 
 .feature:hover {
@@ -451,6 +451,45 @@ body {
   text-align: center;
 }
 
+/* Mobile Menu Tray */
+.mobile-menu-tray {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.mobile-menu-tray ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.mobile-menu-tray a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.mobile-menu-tray a i {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.mobile-menu-tray a:hover,
+.mobile-menu-tray a.active {
+  color: var(--primary);
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
   .slide-content h1 {
@@ -472,21 +511,40 @@ body {
   }
 
   .slide-content {
-    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 100%;
+    width: 90%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
   }
 
   .slide-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .slide-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
 
   .slide-image {
-    display: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    border-radius: 0;
+    transform: none;
   }
 
   .carousel-controls {
     padding: 0 20px;
+    bottom: 100px;
   }
 
   .courses-grid {
@@ -496,14 +554,24 @@ body {
   .course-actions {
     flex-direction: column;
   }
+
+  /* Show mobile menu tray */
+  .mobile-menu-tray {
+    display: block;
+  }
 }
 
 @media (max-width: 576px) {
   .slide-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 12px 25px;
     font-size: 1rem;
   }
 
@@ -523,5 +591,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+  }
+
+  .mobile-menu-tray a {
+    font-size: 0.7rem;
+  }
+
+  .mobile-menu-tray a i {
+    font-size: 1rem;
   }
 }
