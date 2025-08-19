@@ -1,266 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkillCraft Vocational Institute</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h2>Skill<span>Craft</span></h2>
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <h2>Skill<span>Craft</span></h2>
         </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Carousel Section -->
     <section class="hero">
-        <div class="carousel">
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <div class="slide-content">
-                    <h1>Build Your Future with Hands-On Training</h1>
-                    <p>Our vocational programs prepare you for high-demand careers in just months, not years.</p>
-                    <a href="#" class="cta-btn">Start Learning Today</a>
-                </div>
-                <div class="slide-image" style="background-color: #FF6B35;"></div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="slide">
-                <div class="slide-content">
-                    <h1>Learn from Industry Professionals</h1>
-                    <p>Gain real-world experience from instructors who are experts in their fields.</p>
-                    <a href="#" class="cta-btn">Start Learning Today</a>
-                </div>
-                <div class="slide-image" style="background-color: #2EC4B6;"></div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="slide">
-                <div class="slide-content">
-                    <h1>90% Job Placement Rate</h1>
-                    <p>Our graduates get hired quickly in well-paying careers they love.</p>
-                    <a href="#" class="cta-btn">Start Learning Today</a>
-                </div>
-                <div class="slide-image" style="background-color: #FF9F1C;"></div>
-            </div>
+      <div class="carousel">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div class="slide-content">
+            <h1>Build Your Future with Hands-On Training</h1>
+            <p>
+              Our vocational programs prepare you for high-demand careers in
+              just months, not years.
+            </p>
+            <a href="#" class="cta-btn">Start Learning Today</a>
+          </div>
+          <div
+            class="slide-image"
+            style="
+              background-color: #ff6b35;
+              background-image: url('img/slide4.jpg');
+              background-size: cover;
+            "
+          ></div>
         </div>
-        
-        <!-- Carousel Controls -->
-        <div class="carousel-controls">
-            <button class="control-btn prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-            </div>
-            <button class="control-btn next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h1>Learn from Industry Professionals</h1>
+            <p>
+              Gain real-world experience from instructors who are experts in
+              their fields.
+            </p>
+            <a href="#" class="cta-btn">Start Learning Today</a>
+          </div>
+          <div
+            class="slide-image"
+            style="
+              background-color: #2ec4b6;
+              background-image: url('img/slide5.jpg');
+              background-size: cover;
+            "
+          ></div>
         </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h1>90% Job Placement Rate</h1>
+            <p>
+              Our graduates get hired quickly in well-paying careers they love.
+            </p>
+            <a href="#" class="cta-btn">Start Learning Today</a>
+          </div>
+          <div
+            class="slide-image"
+            style="
+              background-color: #ff9f1c;
+              background-image: url('img/slide6.jpg');
+              background-size: cover;
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="carousel-controls">
+        <button class="control-btn prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+        <button class="control-btn next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Featured Courses Section -->
     <section id="courses" class="featured-courses">
-        <div class="container">
-            <h2 class="section-title">Featured <span>Courses</span></h2>
-            <p class="section-subtitle">Hands-on training for in-demand careers</p>
-            
-            <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Technology</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%233a0ca3'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Web Development</text></svg>" alt="Web Development">
-                    </div>
-                    <div class="course-content">
-                        <h3>Full Stack Web Development</h3>
-                        <p>Learn front-end and back-end development to build complete web applications.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 12 weeks</span>
-                                <span><i class="far fa-user"></i> Beginner</span>
-                            </div>
-                            <div class="course-price">$1,299</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Healthcare</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23f72585'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Healthcare</text></svg>" alt="Healthcare">
-                    </div>
-                    <div class="course-content">
-                        <h3>Medical Assistant Program</h3>
-                        <p>Prepare for a rewarding career in healthcare with hands-on clinical training.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 16 weeks</span>
-                                <span><i class="far fa-user"></i> Intermediate</span>
-                            </div>
-                            <div class="course-price">$1,599</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <!-- Course 3 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Skilled Trades</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%234cc9f0'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Electrical</text></svg>" alt="Electrical">
-                    </div>
-                    <div class="course-content">
-                        <h3>Electrical Technician</h3>
-                        <p>Master residential and commercial electrical systems with expert instructors.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 18 weeks</span>
-                                <span><i class="far fa-user"></i> Beginner</span>
-                            </div>
-                            <div class="course-price">$1,899</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <!-- Course 4 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Culinary</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23fb8500'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Culinary Arts</text></svg>" alt="Culinary Arts">
-                    </div>
-                    <div class="course-content">
-                        <h3>Culinary Arts Program</h3>
-                        <p>Develop professional cooking skills in our state-of-the-art kitchen facilities.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 14 weeks</span>
-                                <span><i class="far fa-user"></i> All Levels</span>
-                            </div>
-                            <div class="course-price">$1,499</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <!-- Course 5 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Technology</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23420039'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Data Science</text></svg>" alt="Data Science">
-                    </div>
-                    <div class="course-content">
-                        <h3>Data Analytics Bootcamp</h3>
-                        <p>Learn to analyze and visualize data to drive business decisions and insights.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 10 weeks</span>
-                                <span><i class="far fa-user"></i> Intermediate</span>
-                            </div>
-                            <div class="course-price">$1,799</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <!-- Course 6 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <div class="course-category">Skilled Trades</div>
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%235f0f40'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>HVAC</text></svg>" alt="HVAC">
-                    </div>
-                    <div class="course-content">
-                        <h3>HVAC Technician</h3>
-                        <p>Learn heating, ventilation, and air conditioning systems installation and repair.</p>
-                        <div class="course-details">
-                            <div class="course-info">
-                                <span><i class="far fa-clock"></i> 16 weeks</span>
-                                <span><i class="far fa-user"></i> Beginner</span>
-                            </div>
-                            <div class="course-price">$1,699</div>
-                        </div>
-                    </div>
-                    <div class="course-actions">
-                        <a href="#" class="course-btn">Learn More</a>
-                        <a href="#" class="course-btn outline">Enroll Now</a>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Featured <span>Courses</span></h2>
+        <p class="section-subtitle">Hands-on training for in-demand careers</p>
+
+        <div class="courses-grid">
+          <!-- Course 1 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Technology</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%233a0ca3'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Web Development</text></svg>"
+                alt="Web Development"
+              />
             </div>
-            
-            <div class="courses-cta">
-                <a href="#" class="cta-btn">View All Courses</a>
+            <div class="course-content">
+              <h3>Full Stack Web Development</h3>
+              <p>
+                Learn front-end and back-end development to build complete web
+                applications.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 12 weeks</span>
+                  <span><i class="far fa-user"></i> Beginner</span>
+                </div>
+                <div class="course-price">$1,299</div>
+              </div>
             </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Healthcare</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23f72585'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Healthcare</text></svg>"
+                alt="Healthcare"
+              />
+            </div>
+            <div class="course-content">
+              <h3>Medical Assistant Program</h3>
+              <p>
+                Prepare for a rewarding career in healthcare with hands-on
+                clinical training.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 16 weeks</span>
+                  <span><i class="far fa-user"></i> Intermediate</span>
+                </div>
+                <div class="course-price">$1,599</div>
+              </div>
+            </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Skilled Trades</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%234cc9f0'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Electrical</text></svg>"
+                alt="Electrical"
+              />
+            </div>
+            <div class="course-content">
+              <h3>Electrical Technician</h3>
+              <p>
+                Master residential and commercial electrical systems with expert
+                instructors.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 18 weeks</span>
+                  <span><i class="far fa-user"></i> Beginner</span>
+                </div>
+                <div class="course-price">$1,899</div>
+              </div>
+            </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Course 4 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Culinary</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23fb8500'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Culinary Arts</text></svg>"
+                alt="Culinary Arts"
+              />
+            </div>
+            <div class="course-content">
+              <h3>Culinary Arts Program</h3>
+              <p>
+                Develop professional cooking skills in our state-of-the-art
+                kitchen facilities.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 14 weeks</span>
+                  <span><i class="far fa-user"></i> All Levels</span>
+                </div>
+                <div class="course-price">$1,499</div>
+              </div>
+            </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Course 5 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Technology</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23420039'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Data Science</text></svg>"
+                alt="Data Science"
+              />
+            </div>
+            <div class="course-content">
+              <h3>Data Analytics Bootcamp</h3>
+              <p>
+                Learn to analyze and visualize data to drive business decisions
+                and insights.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 10 weeks</span>
+                  <span><i class="far fa-user"></i> Intermediate</span>
+                </div>
+                <div class="course-price">$1,799</div>
+              </div>
+            </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Course 6 -->
+          <div class="course-card">
+            <div class="course-image">
+              <div class="course-category">Skilled Trades</div>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%235f0f40'/><text x='200' y='125' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>HVAC</text></svg>"
+                alt="HVAC"
+              />
+            </div>
+            <div class="course-content">
+              <h3>HVAC Technician</h3>
+              <p>
+                Learn heating, ventilation, and air conditioning systems
+                installation and repair.
+              </p>
+              <div class="course-details">
+                <div class="course-info">
+                  <span><i class="far fa-clock"></i> 16 weeks</span>
+                  <span><i class="far fa-user"></i> Beginner</span>
+                </div>
+                <div class="course-price">$1,699</div>
+              </div>
+            </div>
+            <div class="course-actions">
+              <a href="#" class="course-btn">Learn More</a>
+              <a href="#" class="course-btn outline">Enroll Now</a>
+            </div>
+          </div>
         </div>
+
+        <div class="courses-cta">
+          <a href="#" class="cta-btn">View All Courses</a>
+        </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="container">
-            <h2>Why Choose SkillCraft?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Industry-Recognized Certifications</h3>
-                    <p>Our programs lead to certifications employers value and respect.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Career Support</h3>
-                    <p>Get help with resume building, interview prep, and job placement.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-clock"></i>
-                    <h3>Flexible Schedules</h3>
-                    <p>Choose from day, evening, or weekend classes to fit your life.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Why Choose SkillCraft?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Industry-Recognized Certifications</h3>
+            <p>
+              Our programs lead to certifications employers value and respect.
+            </p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-briefcase"></i>
+            <h3>Career Support</h3>
+            <p>
+              Get help with resume building, interview prep, and job placement.
+            </p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-clock"></i>
+            <h3>Flexible Schedules</h3>
+            <p>
+              Choose from day, evening, or weekend classes to fit your life.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 SkillCraft Vocational Institute. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2023 SkillCraft Vocational Institute. All rights reserved.</p>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
