@@ -20,7 +20,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize accreditations interactions
   initAccreditationsInteractions();
+
+  // Initialize theme toggle
+  initThemeToggle();
 });
+
+// Theme toggle functionality
+function initThemeToggle() {
+  const toggleCheckbox = document.getElementById("darkModeToggle");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Check for saved theme preference or use system preference
+  const currentTheme =
+    localStorage.getItem("theme") ||
+    (prefersDarkScheme.matches ? "dark" : "light");
+
+  // Set the initial theme
+  if (currentTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    toggleCheckbox.checked = true;
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+    toggleCheckbox.checked = false;
+  }
+
+  // Listen for toggle changes
+  toggleCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+  // Listen for system theme changes
+  prefersDarkScheme.addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      if (e.matches) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        toggleCheckbox.checked = true;
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        toggleCheckbox.checked = false;
+      }
+    }
+  });
+}
 
 // Carousel functionality
 function initCarousel() {

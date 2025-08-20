@@ -27,6 +27,226 @@ body {
   padding: 0 20px;
 }
 
+/* Theme Toggle Styles */
+.theme-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  width: 60px;
+  height: 30px;
+  background: var(--dark);
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.toggle-label i {
+  font-size: 14px;
+  color: white;
+  z-index: 1;
+}
+
+.toggle-label .fa-sun {
+  color: #ffd43b;
+}
+
+.toggle-label .fa-moon {
+  color: #74c0fc;
+}
+
+.toggle-ball {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background: var(--primary);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(30px);
+}
+
+/* Dark Theme Variables */
+:root {
+  --primary: #ff6b35;
+  --secondary: #2ec4b6;
+  --accent: #ff9f1c;
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --text-primary: #1a1a2e;
+  --text-secondary: #555;
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e9ecef;
+}
+
+[data-theme="dark"] {
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --card-bg: #1e1e1e;
+  --border-color: #2d2d2d;
+  --dark: #121212;
+}
+
+/* Apply Dark Theme Styles */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .header {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .navigation a {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .slide-content h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .slide-content p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .features {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .feature {
+  background: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .feature h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .feature p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .featured-courses {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .course-card {
+  background: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .course-content h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .course-content p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .course-info span {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .about-us {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--card-bg) 100%
+  );
+}
+
+[data-theme="dark"] .about-text h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .about-text p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .feature-item span {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .stat-item {
+  background: var(--card-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .stat-label {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .accreditations {
+  background: linear-gradient(135deg, #0d0d17 0%, #121228 100%);
+}
+
+[data-theme="dark"] .accreditation-item,
+[data-theme="dark"] .partner-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .partnership-cta {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile menu tray in dark mode */
+[data-theme="dark"] .mobile-menu-tray {
+  background: var(--card-bg);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mobile-menu-tray a {
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments for theme toggle */
+@media (max-width: 768px) {
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .toggle-label {
+    width: 50px;
+    height: 25px;
+  }
+
+  .toggle-ball {
+    width: 19px;
+    height: 19px;
+  }
+
+  .toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(25px);
+  }
+}
+
 /* Header Styles */
 .header {
   position: fixed;
