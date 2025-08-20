@@ -20,7 +20,7 @@
         <nav class="navigation">
           <ul>
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#courses">Courses</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -168,8 +168,9 @@
           <div class="about-image">
             <div class="image-container">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'><rect width='500' height='400' fill='%23FF6B35'/><text x='250' y='200' font-family='Arial' font-size='24' fill='white' text-anchor='middle'>Students Learning</text></svg>"
-                alt="Students at SkillCraft"
+                src="img/slide6.jpg"
+                alt="Welcome to Vocation MVP"
+                class="video-thumbnail"
               />
               <div class="image-overlay"></div>
             </div>
@@ -197,6 +198,46 @@
         </div>
       </div>
     </section>
+
+    <!-- Welcome Video Section -->
+    <section class="welcome-section">
+      <div class="welcome-container">
+        <!-- Text Content on the Left -->
+        <div class="welcome-content">
+          <h2>Launch Your New Career in Months, Not Years</h2>
+          <p>
+            Our hands-on, expert-led training programs are designed to get you
+            job-ready fast. Stop dreaming about a better future and start
+            building it. Watch our welcome video to see how we can help you
+            succeed.
+          </p>
+          <a href="/courses" class="cta-button">Explore Our Courses</a>
+        </div>
+
+        <!-- Video Thumbnail on the Right -->
+        <div class="welcome-video" id="videoThumbnail">
+          <!-- Replace THUMBNAIL_JPG_LINK with your actual thumbnail image URL -->
+          <img
+            src="img/slide5.jpg"
+            alt="Welcome to Vocation MVP"
+            class="video-thumbnail"
+          />
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <div class="video-iframe-container">
+          <!-- The iframe will be injected here by JavaScript -->
+        </div>
+      </div>
+    </div>
 
     <!-- Featured Courses Section -->
     <section id="courses" class="featured-courses">
@@ -419,10 +460,345 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2023 SkillCraft Vocational Institute. All rights reserved.</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="testimonials-container">
+        <h2 class="section-title" style="text-align: left">
+          Success <span>Stories</span>
+        </h2>
+        <p class="section-subtitle">
+          Don't just take our word for it, hear from our graduates.
+        </p>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-track" id="testimonialTrack">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                  This welding program changed my life. I went from odd jobs to
+                  a certified welder with a union position in under six months.
+                  The instructors were incredible and the hands-on practice was
+                  everything.
+                </p>
+                <div class="testimonial-author">
+                  <!-- Replace AVATAR1.jpg -->
+                  <img
+                    src="img/slide2.jpg"
+                    alt="Chinedu Okoro"
+                    class="author-avatar"
+                  />
+                  <div class="author-details">
+                    <h4 class="author-name">Chinedu Okoro</h4>
+                    <p class="author-title">Certified Welder | Nigerdock</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                  The Full-Stack Web Development course was intense but worth
+                  every minute. The curriculum was up-to-date, and the
+                  project-based learning meant I had a portfolio ready for job
+                  interviews immediately after graduating.
+                </p>
+                <div class="testimonial-author">
+                  <!-- Replace AVATAR2.jpg -->
+                  <img
+                    src="img/test1.jpg"
+                    alt="Amina Suleiman"
+                    class="author-avatar"
+                  />
+                  <div class="author-details">
+                    <h4 class="author-name">Amina Suleiman</h4>
+                    <p class="author-title">
+                      Junior Developer | TechSolve Africa
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                  As a single mother, I needed a program that was flexible and
+                  fast-tracked. The Solar Installation Technician training was
+                  perfect. I now have a stable, well-paying career that allows
+                  me to provide for my family and be home for my kids.
+                </p>
+                <div class="testimonial-author">
+                  <!-- Replace AVATAR3.jpg -->
+                  <img
+                    src="img/test2.jpg"
+                    alt="Funmi Adebayo"
+                    class="author-avatar"
+                  />
+                  <div class="author-details">
+                    <h4 class="author-name">Funmi Adebayo</h4>
+                    <p class="author-title">
+                      Solar Technician | GreenLight Energy
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Navigation Dots -->
+        <div class="slider-dots" id="sliderDots">
+          <!-- Dots are injected by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+      <div class="blog-container">
+        <div class="blog-header">
+          <h2 class="blog-title">Resources <span>&AMP;</span> Insights</h2>
+          <p class="blog-subtitle">
+            Get career tips, industry news, and success stories from our
+            instructors and graduates to help you on your journey.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Blog Post 1 -->
+          <article class="blog-card">
+            <img
+              src="img/blog1.jpg"
+              alt="5 In-Demand Tech Skills in Nigeria for 2025"
+              class="blog-card-image"
+            />
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Tech Careers</span>
+                <span class="blog-card-date"
+                  ><i class="far fa-calendar"></i> May 24, 2025</span
+                >
+              </div>
+              <h3 class="blog-card-title">
+                <a href="#">5 In-Demand Tech Skills in Nigeria for 2025</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                The tech landscape is evolving rapidly. Here are the top skills
+                employers are looking for and how you can learn them fast with
+                our targeted programs.
+              </p>
+              <a href="#" class="blog-card-link"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="blog-card">
+            <img
+              src="img/blog2.jpg"
+              alt="From Student to Solar Technician"
+              class="blog-card-image"
+            />
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Success Story</span>
+                <span class="blog-card-date"
+                  ><i class="far fa-calendar"></i> April 15, 2025</span
+                >
+              </div>
+              <h3 class="blog-card-title">
+                <a href="#"
+                  >From Student to Solar Technician: Funmi's Journey</a
+                >
+              </h3>
+              <p class="blog-card-excerpt">
+                How one mother of two transitioned into a green energy career in
+                just 4 months, doubling her previous income and securing a
+                future for her family.
+              </p>
+              <a href="#" class="blog-card-link"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="blog-card">
+            <img
+              src="img/blog3.jpg"
+              alt="Soft Skills for Tradespeople"
+              class="blog-card-image"
+            />
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Career Advice</span>
+                <span class="blog-card-date"
+                  ><i class="far fa-calendar"></i> March 8, 2025</span
+                >
+              </div>
+              <h3 class="blog-card-title">
+                <a href="#"
+                  >Beyond the Toolbox: Soft Skills Every Successful Tradesperson
+                  Needs</a
+                >
+              </h3>
+              <p class="blog-card-excerpt">
+                Technical skill gets your foot in the door, but soft skills
+                build your career. Learn the communication and business skills
+                that will make you stand out.
+              </p>
+              <a href="#" class="blog-card-link"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="blog-cta">
+          <a href="/blog" class="view-all-btn">View All Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer>
+      <div class="footer-container">
+        <!-- Company Info Column -->
+        <div class="footer-col">
+          <h4>VocationMVP</h4>
+          <p>
+            We provide fast-track, hands-on vocational training to equip you
+            with the skills needed to launch a successful and high-demand career
+            in months, not years.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> About Us</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> All Courses</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Pricing</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Blog</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Popular Courses Column -->
+        <div class="footer-col">
+          <h4>Top Courses</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Full-Stack Web
+                Development</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Solar Installation
+                Technician</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Certified Welding
+                (SMAW)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Digital Marketing
+                Mastery</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> HVAC Technician</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Plumbing & Pipefitting</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter Column -->
+        <div class="footer-col">
+          <h4>Contact & Newsletter</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Innovation Road, Tech City, Lagos, Nigeria</span>
+            </li>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <span>+234 800 123 4567</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@vocationmvp.com</span>
+            </li>
+          </ul>
+
+          <p>
+            <strong>Stay Updated!</strong> Get career tips and course updates.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit" class="subscribe-btn">Subscribe Now</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <div class="copyright">
+            &copy; 2025 VocationMVP. All Rights Reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -445,5 +821,109 @@
     </nav>
 
     <script src="js/script.js"></script>
+
+    <script>
+      // Get DOM Elements
+      const videoThumbnail = document.getElementById("videoThumbnail");
+      const videoModal = document.getElementById("videoModal");
+      const closeModal = document.getElementById("closeModal");
+      const iframeContainer = document.querySelector(".video-iframe-container");
+
+      // Replace 'YOUTUBE_VIDEO_ID' with your actual YouTube Video ID
+      // Example: For https://www.youtube.com/watch?v=abc123, the ID is 'abc123'
+      const youtubeVideoId = "YOUTUBE_VIDEO_ID";
+
+      // Function to open the modal and play the video
+      function openModal() {
+        // Create the iframe with the YouTube URL and autoplay
+        iframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        // Show the modal
+        videoModal.classList.add("active");
+        // Prevent body from scrolling when modal is open
+        document.body.style.overflow = "hidden";
+      }
+
+      // Function to close the modal and stop the video
+      function closeVideoModal() {
+        // Hide the modal
+        videoModal.classList.remove("active");
+        // Remove the iframe to stop the video from playing in the background
+        iframeContainer.innerHTML = "";
+        // Allow body to scroll again
+        document.body.style.overflow = "auto";
+      }
+
+      // Event Listeners
+      videoThumbnail.addEventListener("click", openModal);
+      closeModal.addEventListener("click", closeVideoModal);
+
+      // Close modal if user clicks anywhere outside the video content
+      videoModal.addEventListener("click", (e) => {
+        if (e.target === videoModal) {
+          closeVideoModal();
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.getElementById("testimonialTrack");
+        const dotsContainer = document.getElementById("sliderDots");
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const totalSlides = slides.length;
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Create dots based on number of slides
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          if (i === 0) dot.classList.add("active");
+          dot.setAttribute("data-index", i);
+          dot.addEventListener("click", () => moveToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll(".dot");
+
+        // Function to move to a specific slide
+        function moveToSlide(index) {
+          // Update current index
+          currentIndex = index;
+          // Move the track
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          // Update active dot
+          dots.forEach((dot) => dot.classList.remove("active"));
+          dots[currentIndex].classList.add("active");
+          // Reset the auto-slide timer
+          resetAutoSlide();
+        }
+
+        // Function for automatic sliding
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            moveToSlide(currentIndex);
+          }, 5000); // Change slide every 5 seconds
+        }
+
+        // Function to reset the auto-slide timer
+        function resetAutoSlide() {
+          clearInterval(autoSlideInterval);
+          startAutoSlide();
+        }
+
+        // Start auto-sliding when the page loads
+        startAutoSlide();
+
+        // Pause auto-slide when user hovers over the slider
+        const slider = document.querySelector(".testimonial-slider");
+        slider.addEventListener("mouseenter", () => {
+          clearInterval(autoSlideInterval);
+        });
+        slider.addEventListener("mouseleave", startAutoSlide);
+      });
+    </script>
   </body>
 </html>
