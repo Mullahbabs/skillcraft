@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize carousel
   initCarousel();
 
-  // Initialize mobile menu
-  initMobileMenu();
-
   // Initialize smooth scrolling for navigation links
   initSmoothScrolling();
 
