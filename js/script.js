@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize statistics counter
   initStatisticsCounter();
+
+  // Initialize accreditations interactions
+  initAccreditationsInteractions();
 });
 
 // Carousel functionality
@@ -252,4 +255,22 @@ function initStatisticsCounter() {
     };
     window.requestAnimationFrame(step);
   }
+}
+// Interactive elements for accreditations section
+function initAccreditationsInteractions() {
+  const accreditationItems = document.querySelectorAll(
+    ".accreditation-item, .partner-item"
+  );
+
+  accreditationItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-5px)";
+      this.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.2)";
+    });
+
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0)";
+      this.style.boxShadow = "none";
+    });
+  });
 }
