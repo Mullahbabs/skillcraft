@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize theme toggle
   initThemeToggle();
+
+  // Initialize ad banner
+  initAdBanner();
 });
 
 // Theme toggle functionality
@@ -317,4 +320,86 @@ function initAccreditationsInteractions() {
       this.style.boxShadow = "none";
     });
   });
+}
+
+// Advertisement banner functionality
+function initAdBanner() {
+  const closeAdButtons = document.querySelectorAll(
+    "#close-ad, #close-ad-small"
+  );
+  const adBanner = document.querySelector(".ad-banner");
+
+  // Check if user has previously closed the ad
+  if (localStorage.getItem("adClosed") === "true") {
+    adBanner.style.display = "none";
+    return;
+  }
+
+  // Set up countdown timer
+  function updateCountdown() {
+    // Set the date we're counting down to (3 days from now)
+    const countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 3);
+
+    // Update the count down every 1 second
+    const timer = setInterval(function () {
+      // Get today's date and time
+      const now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      const distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the results
+      document.getElementById("days").textContent = days
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("hours").textContent = hours
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("minutes").textContent = minutes
+        .toString()
+        .padStart(2, "0");
+      document.getElementById("seconds").textContent = seconds
+        .toString()
+        .padStart(2, "0");
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector(".ad-timer").innerHTML = "Offer Expired!";
+      }
+    }, 1000);
+  }
+
+  // Close ad functionality
+  closeAdButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      adBanner.style.opacity = "1";
+
+      // Animate out
+      let opacity = 1;
+      const fadeOut = setInterval(function () {
+        if (opacity <= 0) {
+          clearInterval(fadeOut);
+          adBanner.style.display = "none";
+        }
+        adBanner.style.opacity = opacity;
+        opacity -= 0.05;
+      }, 30);
+
+      // Remember user's choice
+      localStorage.setItem("adClosed", "true");
+    });
+  });
+
+  // Start the countdown
+  updateCountdown();
 }
